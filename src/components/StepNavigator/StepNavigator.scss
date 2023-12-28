@@ -1,0 +1,85 @@
+@use '../../styles/_variables.scss' as *;
+
+.progress-bar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: -3;
+	min-width: 100%;
+	height: 10.75rem;
+	padding-top: 2rem;
+	background: url(../../assets/images/bg-sidebar-mobile-red.svg) no-repeat center/cover;
+
+	&__steps {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	&__step {
+		color: $c-white;
+		font-size: 0.875rem;
+		font-weight: 700;
+
+		&-index {
+			display: grid;
+			place-items: center;
+			width: 2.2rem;
+			height: 2.2rem;
+			border: 1px solid white;
+			border-radius: 50%;
+		}
+
+		&-content {
+			display: none;
+		}
+	}
+}
+
+@media screen and (min-width: 670px) {
+	.progress-bar {
+		position: inherit;
+		grid-area: progress;
+		height: 100%;
+		z-index: 0;
+		padding: 2.5rem 2rem;
+		background-image: url(../../assets/images/bg-sidebar-desktop-red.svg);
+		background-repeat: no-repeat;
+		border-radius: 0.5rem;
+
+		&__steps {
+			flex-direction: column;
+		}
+
+		&__step {
+			display: flex;
+			padding-bottom: 1rem;
+
+			&-index {
+				margin-right: 1.5rem;
+			}
+
+			&-content {
+				display: block;
+			}
+
+			&-number {
+				padding-bottom: 0.25rem;
+				color: $c-alabaster;
+				font-size: 0.75rem;
+			}
+
+			&-title {
+				font-size: 0.875rem;
+				letter-spacing: 1px;
+			}
+		}
+	}
+}
+
+.active {
+	border: 1px solid $c-alabaster;
+	background-color: $c-alabaster;
+	color: $c-blue-marine;
+}

@@ -1,0 +1,78 @@
+@use './_variables.scss' as *;
+@use '../components/StepNavigator/StepNavigator.scss' as *;
+@use '../pages/Form/Form.scss' as *;
+@use '../pages/FormInfo/FormInfo.scss' as *;
+@use '../pages/FormPlan/FormPlan.scss' as *;
+@use '../pages/FormAddons/FormAddons.scss' as *;
+@use '../pages/FormSummary/FormSummary.scss' as *;
+@use '../pages/FormThanks/FormThanks.scss' as *;
+@use '../pages/Form404/Form404.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 16px;
+}
+
+body {
+	position: relative;
+	min-height: 100vh;
+	background-color: $c-magnolia;
+}
+
+#root {
+	display: flex;
+	justify-content: center;
+}
+
+.App {
+	display: flex;
+	flex-direction: column;
+	min-width: 243px;
+	max-width: 430px;
+	margin: 6rem 1rem;
+	border-radius: 1rem;
+	background-color: $c-white;
+	box-shadow: -2px 1rem 1rem -10px $c-gray-light;
+}
+
+.attribution {
+	display: none;
+	text-align: center;
+}
+
+@media screen and (min-width: 670px) {
+	#root {
+		align-items: center;
+		min-height: 100vh;
+	}
+
+	.App {
+		width: 48.75rem;
+		max-width: none;
+		height: 37.5rem;
+		animation: appAnimation 0.7s ease-in-out;
+	}
+	@keyframes appAnimation {
+		from {
+			opacity: 0;
+			transform: translateY(-10%);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0%);
+		}
+	}
+}
+
+@media screen and (min-width: 960px) {
+	.App {
+		width: 58.75rem;
+	}
+}

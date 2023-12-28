@@ -1,0 +1,106 @@
+@use '../../styles/_variables.scss' as *;
+
+.addons {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+
+	&__checkbox {
+		position: relative;
+		width: 1.25rem;
+		height: 1.25rem;
+		border: 1px solid $c-gray-light;
+		border-radius: 0.25rem;
+		outline: none;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+	}
+
+	&__checkbox:checked {
+		border-color: $c-blue-purplish;
+		background-color: $c-blue-purplish;
+	}
+
+	&__checkbox::before {
+		content: '\2713';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		color: white;
+		font-size: 12px;
+		font-weight: 700;
+		opacity: 0;
+		transition: opacity 0s;
+		transform: translate(-50%, -50%);
+	}
+
+	&__checkbox:checked::before {
+		opacity: 1;
+	}
+	&__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 11.25rem;
+	}
+
+	&__title {
+		font-size: 0.875rem;
+		color: $c-blue-marine;
+		line-height: auto;
+	}
+
+	&__details {
+		color: $c-gray-cool;
+		font-size: 0.75rem;
+		line-height: 1.25rem;
+	}
+
+	&__price {
+		color: $c-blue-purplish;
+		font-size: 0.75rem;
+	}
+}
+
+.addon {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	gap: 1rem;
+	max-height: 7rem;
+	padding: 0.75rem;
+	border: 1px solid $c-gray-light;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+@media screen and (min-width: 670px) {
+	.addon {
+		justify-content: start;
+		height: 5.125rem;
+		padding: 1.4rem;
+	}
+
+	.addons {
+		&__text {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width: 11.25rem;
+		}
+		&__text {
+			padding-left: 1rem;
+		}
+		&__price {
+			position: absolute;
+			right: 1.25rem;
+		}
+	}
+}
+
+.checked {
+	border-color: $c-blue-purplish;
+	background-color: $c-gray-vlight;
+}

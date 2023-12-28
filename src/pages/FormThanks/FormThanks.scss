@@ -1,0 +1,44 @@
+@use '../../styles/_variables.scss' as *;
+
+.gratitude {
+	display: grid;
+	place-items: center;
+	&__icon {
+		max-width: 3.5rem;
+		max-height: 3.5rem;
+		margin-top: 2.5rem;
+		margin-bottom: 1.5rem;
+	}
+	&__title {
+		color: $c-spark;
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height: 1.6rem;
+		margin-bottom: 0.5rem;
+	}
+	&__text {
+		padding-bottom: 2rem;
+		color: $c-gray-cool;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 1rem;
+		line-height: 1.6rem;
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 670px) {
+	.gratitude {
+		&__icon {
+			max-width: none;
+			max-height: none;
+			margin-top: 3.5rem;
+			margin-bottom: 2rem;
+			line-height: 2.25rem;
+		}
+		&__title {
+			margin-bottom: 1rem;
+			font-size: 2rem;
+		}
+	}
+}

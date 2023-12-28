@@ -1,0 +1,152 @@
+@use '../../styles/_variables.scss' as *;
+
+.plan {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	min-width: 100%;
+
+	&__container {
+		display: flex;
+		width: 100%;
+		height: 6rem;
+		border: 1px solid $c-gray-light;
+		border-radius: 0.5rem;
+		cursor: pointer;
+		transition: border-color 0.3s ease;
+
+		&:hover {
+			border-color: $c-spark;
+			box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+		}
+	}
+
+	&__radios {
+		opacity: 0;
+	}
+	&__icon {
+		padding-right: 0.875rem;
+		margin-left: 0.15rem;
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		line-height: 1.3rem;
+	}
+
+	&__title {
+		color: $c-spark;
+		font-size: 1rem;
+	}
+
+	&__price {
+		color: $c-gray-cool;
+		font-size: 0.875rem;
+	}
+
+	&__bonus {
+		color: $c-spark;
+		font-size: 0.75rem;
+	}
+
+	&__period {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		height: 3rem;
+		margin-top: 1rem;
+		border-radius: 0.625rem;
+		background-color: $c-gray-vlight;
+		color: $c-gray-cool;
+		font-weight: 500;
+		font-size: 0.875rem;
+	}
+
+	&__switch {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 2.5rem;
+		height: 1.25rem;
+		padding-left: 0.3rem;
+		border-radius: 0.625rem;
+		background-color: $c-spark;
+
+		&-checkbox {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+
+		&-slider {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: 0.4s;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 4px;
+				bottom: 4px;
+				width: 0.75rem;
+				height: 0.75rem;
+				background-color: white;
+				border-radius: 50%;
+				transition: 0.4s;
+			}
+		}
+	}
+	&__switch-checkbox:checked + &__switch-slider:before {
+		transform: translateX(1.25rem);
+	}
+}
+
+@media screen and (min-width: 670px) {
+	.plan {
+		flex-direction: row;
+		gap: 1rem;
+
+		&__container {
+			display: flex;
+			flex-direction: column;
+			height: 183px;
+			padding-left: 1rem;
+		}
+
+		&__icon {
+			width: 40px;
+			height: 40px;
+			padding-right: 0;
+			margin-top: 0.5rem;
+			margin-left: 0rem;
+		}
+
+		&__text {
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		&__period {
+			width: 100%;
+			margin-top: 2rem;
+		}
+	}
+}
+
+.selected {
+	border-color: $c-gray-cool;
+	background-color: $c-alabaster;
+	box-shadow: inset -5px -5px 9px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(94,104,121,0.3);
+}
+
+.selectedLabel {
+	color: $c-spark;
+}

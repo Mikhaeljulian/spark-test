@@ -1,0 +1,111 @@
+@use '../../styles/_variables.scss' as *;
+
+.summary {
+	color: $c-gray-cool;
+	&__selected {
+		padding: 1rem;
+		border-radius: 0.5rem;
+		background-color: #f8f9ff;
+	}
+	&__plan {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 0.75rem;
+		border-bottom: 1px solid hsl(0deg 0% 88.04%);
+		&-selected {
+			&-name {
+				color: $c-spark;
+				font-weight: 500;
+				font-size: 0.875rem;
+				line-height: 1rem;
+			}
+
+			&-change {
+				color: $c-gray-cool;
+				font-weight: 400;
+				font-size: 0.875rem;
+				line-height: 1.25rem;
+				transition: color 0.3s ease;
+			}
+
+			&-change:hover {
+				color: $c-blue-purplish;
+			}
+		}
+
+		&-price {
+			display: flex;
+			align-self: center;
+			color: $c-spark;
+			font-weight: 700;
+			font-size: 0.875rem;
+			line-height: 1.25rem;
+		}
+	}
+
+	&__service {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 0.75rem;
+		font-weight: 400;
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+		&-name {
+			color: $c-gray-cool;
+		}
+
+		&-price {
+			color: $c-spark;
+		}
+	}
+
+	&__total {
+		display: flex;
+		justify-content: space-between;
+		padding: 1.5rem 1rem 0rem 1rem;
+		&-title {
+			font-weight: 400;
+			font-size: 0.875rem;
+			line-height: 1.25rem;
+		}
+
+		&-value {
+			color: $c-blue-purplish;
+			font-weight: 700;
+			font-size: 1rem;
+			line-height: 1.25rem;
+		}
+	}
+}
+
+@media screen and (min-width: 670px) {
+	.summary {
+		&__selected {
+			padding-bottom: 1.5rem;
+		}
+		&__plan {
+			padding-bottom: 1.5rem;
+			&-selected {
+				&-name {
+					font-size: 1rem;
+				}
+			}
+
+			&-price {
+				font-size: 1rem;
+			}
+			&__total {
+				&-value {
+					font-size: 1.25rem;
+				}
+			}
+		}
+		&__service {
+			margin-top: 1rem;
+		}
+	}
+}
+
+.confirm:hover {
+	background-color: $c-blue-pastel;
+}

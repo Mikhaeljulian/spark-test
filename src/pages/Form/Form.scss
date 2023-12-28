@@ -1,0 +1,130 @@
+@use '../../styles/_variables.scss' as *;
+
+.form {
+	width: 100%;
+	height: 100%;
+	padding: 2rem 1.5rem;
+
+	&__title {
+		margin-bottom: 0.5rem;
+		color: $c-blue-marine;
+		font-size: 1.5rem;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	&__description {
+		margin-bottom: 1.5rem;
+		color: $c-gray-cool;
+		line-height: 1.5rem;
+		text-align: center;
+	}
+
+	&__footer {
+		position: absolute;
+		bottom: 0rem;
+		left: 0;
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		min-width: 100%;
+		padding: 1.1rem 1rem;
+		background-color: white;
+		font-weight: 500;
+		font-size: 0.8rem;
+		text-align: end;
+	}
+
+	&__spacer {
+		flex-grow: 1;
+	}
+
+	&__next-page {
+		border: none;
+		padding: 0.75rem 1rem;
+		background-color: $c-spark;
+		border-radius: 0.5rem;
+		color: $c-white;
+		text-decoration: none;
+		cursor: pointer;
+		transition: background-color 0.2s ease;
+
+		&:hover {
+			background-color: $c-blue-ocean;
+		}
+	}
+	&__prev-page {
+		padding: 0.75rem 1rem;
+		text-decoration: none;
+		color: $c-gray-cool;
+		cursor: pointer;
+	}
+}
+
+@media screen and (min-width: 670px) {
+	.form {
+		display: grid;
+		grid-template-columns: 15rem 1fr;
+		grid-template-rows: 1fr 3fr 1fr;
+		grid-column-gap: 1.5rem;
+		grid-template-areas:
+			'progress header'
+			'progress body'
+			'progress footer';
+		padding: 1rem;
+
+		&__header {
+			max-width: 28.125rem;
+			grid-area: header;
+			margin-top: 2.5rem;
+			margin-bottom: 2.5rem;
+		}
+
+		&__title {
+			margin-bottom: 0.69rem;
+			font-size: 2rem;
+		}
+
+		&__description {
+			margin-bottom: 0rem;
+		}
+
+		&__body {
+			display: flex;
+			flex-direction: column;
+			grid-area: body;
+			max-width: 28.125rem;
+		}
+
+		&__footer {
+			position: inherit;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			grid-area: footer;
+			min-width: auto;
+			max-width: 28.125rem;
+			padding: 0;
+			margin-bottom: 1rem;
+			font-size: 1rem;
+		}
+
+		&__next-page {
+			width: 7.7rem;
+			height: 3rem;
+			font-size: 1rem;
+		}
+
+		&__prev-page {
+			position: inherit;
+			padding-left: 0;
+		}
+	}
+}
+
+@media screen and (min-width: 960px) {
+	.form {
+		grid-template-columns: 17rem 1fr;
+		grid-column-gap: 6.25rem;
+	}
+}

@@ -1,0 +1,45 @@
+@use '../../styles/_variables.scss' as *;
+
+.failed {
+	display: grid;
+	place-items: center;
+	margin-top: 1.5rem;
+	&__title {
+		color: $c-blue-marine;
+		font-size: 1.5rem;
+		line-height: 1.6rem;
+		text-align: center;
+	}
+	&__text {
+		margin-top: 0.8rem;
+		margin-bottom: 0.5rem;
+		font-size: 1rem;
+		line-height: 1.6rem;
+		color: $c-gray-cool;
+		font-weight: 400;
+		text-align: center;
+	}
+	&__link {
+		margin-top: 1rem;
+		padding: 0.7rem;
+		border-radius: 0.5rem;
+		background-color: $c-blue-marine;
+		color: $c-white;
+		text-decoration: none;
+		cursor: pointer;
+	}
+}
+
+@media screen and (min-width: 670px) {
+	.failed {
+		margin-top: 3rem;
+		&__title {
+			font-size: 2rem;
+			line-height: 2.5rem;
+		}
+		&__text {
+			margin-top: 1.2rem;
+			margin-bottom: 1rem;
+		}
+	}
+}
